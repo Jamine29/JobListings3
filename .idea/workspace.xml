@@ -3,6 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="6ca42494-6d6e-4926-944e-031c057259d9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/laradock/env-example" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laradock/ide-codiad/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/laradock/ide-codiad/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laradock/php-fpm/php5.6.ini" beforeDir="false" afterPath="$PROJECT_DIR$/laradock/php-fpm/php5.6.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laradock/php-fpm/php7.0.ini" beforeDir="false" afterPath="$PROJECT_DIR$/laradock/php-fpm/php7.0.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laradock/php-fpm/php7.1.ini" beforeDir="false" afterPath="$PROJECT_DIR$/laradock/php-fpm/php7.1.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laradock/php-fpm/php7.2.ini" beforeDir="false" afterPath="$PROJECT_DIR$/laradock/php-fpm/php7.2.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laradock/php-fpm/php7.3.ini" beforeDir="false" afterPath="$PROJECT_DIR$/laradock/php-fpm/php7.3.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laradock/php-fpm/php7.4.ini" beforeDir="false" afterPath="$PROJECT_DIR$/laradock/php-fpm/php7.4.ini" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,6 +19,14 @@
   <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/laradock" />
@@ -141,6 +156,9 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\JamineMueller\PhpstormProjects\JobListings3\resources\js\layout" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\JamineMueller\PhpstormProjects\JobListings3\resources\views" />
       <recent name="C:\Users\JamineMueller\PhpstormProjects\JobListings3\database\seeders" />
@@ -163,7 +181,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1603695326816</updated>
-      <workItem from="1603695327854" duration="7856000" />
+      <workItem from="1603695327854" duration="23343000" />
     </task>
     <servers />
   </component>
@@ -171,9 +189,29 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="229" y="145" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603706035790">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="229" y="145" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680/2560.0.1920.1040@0.0.1280.680" timestamp="1603706035790" />
+    <state x="189" y="90" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603706129380">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="189" y="90" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680/2560.0.1920.1040@0.0.1280.680" timestamp="1603706129380" />
     <state width="505" height="446" key="SwitcherDM" timestamp="1603701643762">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="505" height="446" key="SwitcherDM/0.0.1280.680/2560.0.1920.1040@0.0.1280.680" timestamp="1603701643762" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/resources/js/routes.js</url>
+          <line>10</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

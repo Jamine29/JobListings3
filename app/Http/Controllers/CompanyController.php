@@ -3,19 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Inertia\Inertia;
-use App\Repositories\CompanyRepository;
 use App\Models\Company;
 
 class CompanyController extends Controller
 {
-    private $companyRepository;
-
-    public function __construct(CompanyRepository $companyRepository)
-    {
-        $this->companyRepository = $companyRepository;
-    }
-
     /**
      * Display a listing of the resource.
      *

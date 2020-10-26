@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// entry point
 Route::get('/{any}', function () {
     return view('app');
 })->where('any', '.*');

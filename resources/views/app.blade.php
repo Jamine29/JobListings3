@@ -8,11 +8,11 @@
 
         <title>Job Listings</title>
 
-        <link rel="stylesheet" type="text/css" href="css/app.css">
+        <!-- <link rel="stylesheet" type="text/css" href="css/app.css"> -->
     </head>
     <body>
         <div id="app">
-            <app></app>
+            <app-layout></app-layout>
         </div>
         <script src="{{ 'js/app.js' }}" type="text/javascript"></script>
     </body>

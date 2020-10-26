@@ -3,18 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Inertia\Inertia;
-use App\Repositories\JobRepository;
 use App\Models\Job;
+use App\Http\Resources\Job as JobResource;
 
 class JobController extends Controller
 {
-    private $jobRepository;
-
-    public function __construct(JobRepository $jobRepository) {
-        $this->jobRepository = $jobRepository;
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -24,9 +17,7 @@ class JobController extends Controller
     {
         $jobs = Job::paginate();
 
-        return Inertia::render('Jobs/Index', [
-            'jobs' => $jobs
-        ]);
+        return JobResource::collection($jobs);
     }
 
     /**
