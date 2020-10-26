@@ -136,17 +136,17 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/database/seeders" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\JamineMueller\PhpstormProjects\JobListings3\resources\views" />
       <recent name="C:\Users\JamineMueller\PhpstormProjects\JobListings3\database\seeders" />
       <recent name="C:\Users\JamineMueller\PhpstormProjects\JobListings3\database\migrations" />
       <recent name="C:\Users\JamineMueller\PhpstormProjects\JobListings3\database\factories" />
       <recent name="C:\Users\JamineMueller\PhpstormProjects\JobListings3\app\Models" />
-      <recent name="C:\Users\JamineMueller\PhpstormProjects\JobListings3\app\Http\Controllers" />
     </key>
   </component>
   <component name="RunManager">
@@ -163,11 +163,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1603695326816</updated>
-      <workItem from="1603695327854" duration="1815000" />
+      <workItem from="1603695327854" duration="7856000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="505" height="446" key="SwitcherDM" timestamp="1603701643762">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="505" height="446" key="SwitcherDM/0.0.1280.680/2560.0.1920.1040@0.0.1280.680" timestamp="1603701643762" />
   </component>
 </project>
