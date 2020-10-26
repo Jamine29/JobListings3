@@ -40,4 +40,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /*
+ * Defines Many-To-Many-Relationship to User.
+ */
+    public function companies()
+    {
+        return $this->belongsToMany('App\Models\Company', 'company_user', 'user_id', 'company_id')
+            ->withTimestamps();
+    }
 }
