@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Job;
 use App\Repository\CompanyRepository;
 use Illuminate\Http\Request;
 use App\Models\Company;
@@ -12,6 +13,8 @@ class CompanyController extends Controller
 
     public function __construct(CompanyRepository $companyRepository)
     {
+        $this->authorizeResource(Company::class);
+
         $this->companyRepository = $companyRepository;
     }
 
