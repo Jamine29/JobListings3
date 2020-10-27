@@ -1,30 +1,27 @@
-import JobsCreate from './Pages/Jobs/Create.vue';
-import JobsUpdate from './Pages/Jobs/Update.vue';
-import JobsIndex from './Pages/Jobs/Index.vue';
-import JobsShow from './Pages/Jobs/Show.vue';
+import PageJobIndex from './Pages/Jobs/PageJobIndex.vue';
 import NotFound from './Pages/Error/NotFound.vue';
 
 const routes = [
     {
         name: 'jobsIndex',
         path: '/jobs',
-        component: JobsIndex,
-        //props: { title: "This is the SPA home" }
+        component: PageJobIndex,
+        //props: { title: "Prop" }
     },
     {
         name: 'jobsShow',
         path: '/jobs/:id',
-        component: JobsShow
+        component: PageJobIndex
     },
     {
         name: 'jobsCreate',
         path: '/jobs/create',
-        component: JobsCreate
+        component: PageJobIndex
     },
     {
         name: 'jobsUpdate',
         path: '/jobs/update',
-        component: JobsUpdate
+        component: PageJobIndex
     },
     {
         name: 'not-found',

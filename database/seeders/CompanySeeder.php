@@ -24,7 +24,6 @@ class CompanySeeder extends Seeder
 
              for($i=0; $i<count($users); $i++){
                  if($i === 0){
-                     //dd($company->users());
                      $company->users()->attach($users[$i], ['isManager' => 1]);
                  }
                  else{

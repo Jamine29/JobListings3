@@ -2,11 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Repository\CompanyRepository;
 use Illuminate\Http\Request;
 use App\Models\Company;
 
 class CompanyController extends Controller
 {
+    private $companyRepository;
+
+    public function __construct(CompanyRepository $companyRepository)
+    {
+        $this->companyRepository = $companyRepository;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,9 +24,7 @@ class CompanyController extends Controller
     {
         $companies = Company::paginate();
 
-        return Inertia::render('Companies/Index', [
-            'companies' => $companies
-        ]);
+        return response($companies);
     }
 
     /**
@@ -29,50 +35,46 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
-        Company::validate($request);
+        $data = $this->validate($request, Job::validationRules);
+
+        $model = Job::create($data);
+
+        return respone($model);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  Company $company
+     * @param  Job  $job
      * @return \Illuminate\Http\Response
      */
-    public function show(Company $company)
+    public function show(Job $job)
     {
-        $jobs = $company->jobs()->get();
-
-        return Inertia::render('Companies/Show', [
-            'company' => $company,
-            'jobs' => $jobs
-        ]);
+        return respones($job);
     }
-
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     *
-     * @param  Company $company
+     * @param  Job $job
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Company $company)
+    public function update(Request $request, Job $job)
     {
-        // Validate
+        $data = $this->validate($request, Job::valitationRules());
+
+        return response(['success' => $job->update($data)]);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  Company $company
+     * @param  Job  $job
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Company $company)
+    public function destroy(Job $job)
     {
-        $company->users()->detach();
-        $company->delete();
-
-        return Redirect::route('dashboard')->with('success', 'Company successfully deleted.');
+        response(['success' => $job->delete()]);
     }
 }

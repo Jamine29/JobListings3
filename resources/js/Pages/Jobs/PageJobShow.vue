@@ -1,3 +1,7 @@
 <template>
-    <p>Create</p>
+
 </template>
+
+<script>
+
+</script>

@@ -1,13 +1,12 @@
 <template>
     <div>
-        <div v-for="job in jobs" class=" bg-black border-blue-200 border-4 rounded-xl p-6 overflow-hidden mb-6">
-            <p>Job {{ job }}</p>
+        <div v-for="job in jobs" class="border-blue-200 border-4 rounded-xl p-6 overflow-hidden mb-6">
             <div>
-                <h5 class="block mt-1 mb-2 text-lg leading-tight font-semibold text-xl mb-2 text-gray-800 hover:underline">
-                    {{ job.title }}
-                </h5>
-                <p class="text-gray-700 text-base mb-1">Description: {{job.description}}</p>
-                <p class="text-gray-700 text-base mb-6">Update at: {{job.updated_at}}</p>
+                <h5 v-html=job.title class="block mt-1 mb-2 text-lg leading-tight font-semibold text-xl mb-2 text-gray-800 hover:underline"></h5>
+                <h4>Description:</h4>
+                <p v-html=job.description class="text-gray-700 text-base mb-1"></p>
+                <h4>Update at:</h4>
+                <p class="text-gray-700 text-base mb-6">{{job.updated_at | dateFormat }}</p>
             </div>
         </div>
         <a :href=links.last>Last Link</a>
@@ -27,15 +26,11 @@
             this.fetchJobs('http://localhost/api/jobs');
         },
         mounted() {
-            console.log('Jobs Index Component mounted');
         },
         methods: {
             fetchJobs(uri) {
-                console.log('hier');
-                console.log(uri);
                 this.axios.get(uri)
                 .then((response) => {
-                    console.log('respones');
                     console.log(response.data.data);
                     this.jobs = response.data.data;
                     this.links = response.data.links;

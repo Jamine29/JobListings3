@@ -18,7 +18,7 @@ class CreateCompaniesTable extends Migration
             $table->string('name', 150);
             $table->string('description', 250);
             $table->string('address', 150);
-            $table->string('email')->unique();
+            $table->string('email');
             $table->timestamp('email_verified_at')->nullable();
             $table->timestamps();
         });

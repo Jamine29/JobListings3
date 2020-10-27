@@ -21,10 +21,14 @@ class JobFactory extends Factory
      */
     public function definition()
     {
+        $company = \App\Models\Company::inRandomOrder()->first();
+        $user = $company->users()->inRandomOrder()->first();
+
         return [
             'title' => $this->faker->jobTitle,
             'description' => $this->faker->realText($maxNbChars = 250, $indexSize = 2),
-            'company_id' => \App\Models\Company::inRandomOrder()->first()
+            'company_id' => $company,
+            'user_id' => $user
         ];
     }
 }

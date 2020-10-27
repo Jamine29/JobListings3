@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use http\Env\Request;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -22,24 +23,17 @@ class Company extends Model
     ];
 
     /*
-     * Validates the given Data.
-     *
-     * @param \Illuminate\Http\Request  $request
-     * @param Company $company
-     * @return Object $validatedCompany
+     * Defines validation rules.
      */
-    public function validate(Request $request) {
-        $validatedCompany = $request->validate([
+    public static function validationRules(): array
+    {
+        return [
             'name' => 'required|string|min:1|max:150',
             'description' => 'required|string|min:1|max:250',
             'address' => 'required|string|min:1|max:150',
-            'email' => 'required|email|unique:companies,email'
-        ]);
-
-        return $validatedCompany;
+            'email' => 'required|email'
+        ];
     }
-
-
 
     /*
      * Defines One-To-Many-Relationship to Job.

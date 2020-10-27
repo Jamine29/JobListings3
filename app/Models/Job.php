@@ -17,14 +17,36 @@ class Job extends Model
     protected $fillable =[
         'title',
         'description',
-        'company_id'
+        'company_id',
+        'user_id'
     ];
 
     /*
-     * Defines One-To-Many-Relationship to Company.
+     * Defines validation rules.
+     */
+
+    public static function validationRules(): array
+    {
+        return [
+            'title' => 'required|string|min:2|max:150',
+            'description' => 'required|string|min:2|max:250',
+            'companyId' => 'required|integer'
+        ];
+    }
+
+    /*
+     * Defines one-to-many-relationship to company.
      */
     public function company()
     {
         return $this->belongsTo('App\Models\Company');
+    }
+
+    /*
+     * Defines one-to-many-relationship to user.
+     */
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
     }
 }

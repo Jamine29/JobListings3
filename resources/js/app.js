@@ -27,10 +27,19 @@ Vue.component('example-component', require('./Components/ExampleComponent.vue').
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-import axios from 'axios';
-import VueAxios from 'vue-axios';
+import moment from 'moment';
 
-Vue.use(VueAxios, axios);
+Vue.filter('dateFormat', function(date){
+    return moment(date).locale(document.documentElement.lang).format('dddd, Do MMMM YYYY');
+})
+
+//import VueAxios from 'vue-axios';
+//Vue.use(VueAxios, axios);
+
+import axios from 'axios';
+import { Model } from 'vue-api-query';
+
+Model.$http = axios;
 
 import VueRouter from 'vue-router';
 import routes from './routes.js';

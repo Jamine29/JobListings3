@@ -4,10 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Job;
-use App\Http\Resources\Job as JobResource;
+use App\Repositories\JobRepository;
 
 class JobController extends Controller
 {
+    private $jobRepository;
+
+    public function __construct(JobRepository $jobRepository)
+    {
+        $this->authorizeResource(Job::class);
+
+        $this->jobRepository = $jobRepository;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -17,7 +26,7 @@ class JobController extends Controller
     {
         $jobs = Job::paginate();
 
-        return JobResource::collection($jobs);
+        return response($jobs);
     }
 
     /**
@@ -28,7 +37,11 @@ class JobController extends Controller
      */
     public function store(Request $request)
     {
-        dd('in store');
+        $data = $this->validate($request, Job::validationRules());
+
+        $model = Job::create($data);
+
+        return respones($model);
     }
 
     /**
@@ -39,33 +52,31 @@ class JobController extends Controller
      */
     public function show(Job $job)
     {
-        dd('hier');
-
-        return Inertia::render('Jobs/Show', [
-            'job' => $job
-        ]);
+        return response($job);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  Job $job
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Job $job)
     {
-        dd('in update');
+        $data = $this->validate($request, Job::validationsRules());
+
+        return response(['success' => $job->update($data)]);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Job  $job
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Job $job)
     {
-        dd('in destroy');
+        return response(['success' => $job->delete()]);
     }
 }

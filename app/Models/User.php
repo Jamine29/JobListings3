@@ -32,21 +32,20 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
-
     /*
- * Defines Many-To-Many-Relationship to User.
- */
+     * Defines Many-To-Many-Relationship to User.
+     */
     public function companies()
     {
         return $this->belongsToMany('App\Models\Company', 'company_user', 'user_id', 'company_id')
             ->withTimestamps();
+    }
+
+    /*
+     * Defines One-To-Many-Relationship to User.
+     */
+    public function jobs()
+    {
+        return $this->hasMany('App\Models\Job');
     }
 }
