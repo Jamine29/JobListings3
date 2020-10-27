@@ -37740,21 +37740,37 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "nav",
-    { staticClass: "navbar navbar-expand-md navbar-light navbar-laravel" },
+    {
+      staticClass:
+        "bg-gray-700 border-b border-gray-100 fixed top-0 left-0 right-0"
+    },
     [
       _c("div", { staticClass: "container" }, [
-        _c(
-          "ul",
-          { staticClass: "navbar-nav" },
-          [
-            _c(
-              "router-link",
-              { staticClass: "nav-link", attrs: { to: { name: "jobs" } } },
-              [_vm._v("Jobs")]
-            )
-          ],
-          1
-        )
+        _c("ul", { staticClass: "navbar-nav" }, [
+          _c("div", { staticClass: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" }, [
+            _c("div", { staticClass: "flex justify-between h-12" }, [
+              _c("div", { staticClass: "flex" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "hidden space-x-8 sm:-my-px sm:ml-10 sm:flex"
+                  },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "nav-link",
+                        attrs: { to: { name: "jobs" } }
+                      },
+                      [_vm._v("Jobs")]
+                    )
+                  ],
+                  1
+                )
+              ])
+            ])
+          ])
+        ])
       ])
     ]
   )
