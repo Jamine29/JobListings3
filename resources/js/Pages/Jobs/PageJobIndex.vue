@@ -6,39 +6,50 @@
                 <h4>Description:</h4>
                 <p v-html=job.description class="text-gray-700 text-base mb-1"></p>
                 <h4>Update at:</h4>
-                <p class="text-gray-700 text-base mb-6">{{job.updated_at | dateFormat }}</p>
+                <p v-html="$options.filters.dateFormat(job.updated_at)" class="text-gray-700 text-base mb-6"></p>
             </div>
         </div>
-        <a :href=links.last>Last Link</a>
-        <button v-on:click="fetchJobs(links.last)">Last Page</button>
+        <div>
+            <div v-for="link in links" style="display:inline-block">
+                <button v-if="link.url !== null" v-html=link.label v-on:click="fetchJobs(link.label)" style="margin: 20px">Last Page</button>
+                <button v-else v-html=link.label v-on:click="fetchJobs(link.label)" disabled=true style="margin: 20px"></button>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
+    import Job from '../../Models/Job.js';
+
     export default {
         data() {
             return {
                 jobs: [],
-                links: {}
+                links: {},
+                current_page: 0
             }
         },
-        created() {
-            this.fetchJobs('http://localhost/api/jobs');
+        async created() {
+            let response = await Job.get();
+            this.jobs = response.data;
+            this.links = response.links;
+            this.current_page = response.current_page;
         },
         mounted() {
         },
         methods: {
-            fetchJobs(uri) {
-                this.axios.get(uri)
-                .then((response) => {
-                    console.log(response.data.data);
-                    this.jobs = response.data.data;
-                    this.links = response.data.links;
-                })
-                .catch((error) => {
-                    console.log('Error');
-                    console.log(error);
-                })
+            async fetchJobs(pageNumber) {
+                if(pageNumber === 'Next &raquo;') {
+                    pageNumber = this.current_page + 1;
+                }
+                else if(pageNumber === '&laquo; Previous') {
+                    pageNumber = this.current_page - 1;
+                }
+
+                let response = await Job.page(pageNumber).get();
+                this.jobs = response.data;
+                this.links = response.links;
+                this.current_page = response.current_page;
             }
         }
     }

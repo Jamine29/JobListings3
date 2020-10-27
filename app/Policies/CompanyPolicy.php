@@ -53,7 +53,7 @@ class CompanyPolicy
      */
     public function update(User $user, Company $company)
     {
-        !empty($company->managers()->where('user_id', '=', $user->id));
+        //!empty($company->managers()->where('user_id', '=', $user->id)->get());
     }
 
     /**
@@ -65,6 +65,6 @@ class CompanyPolicy
      */
     public function delete(User $user, Company $company)
     {
-        !empty($company->managers()->where('user_id', '=', $user->id));
+        //!empty($company->managers()->where('user_id', '=', $user->id));
     }
 }
