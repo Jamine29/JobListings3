@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div v-for="job in jobs" class="border-blue-200 border-4 rounded-xl p-6 overflow-hidden mb-6">
+        <div v-for="job in jobs" class=" bg-black border-blue-200 border-4 rounded-xl p-6 overflow-hidden mb-6">
             <p>Job {{ job }}</p>
             <div>
                 <h5 class="block mt-1 mb-2 text-lg leading-tight font-semibold text-xl mb-2 text-gray-800 hover:underline">

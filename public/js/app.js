@@ -37837,7 +37837,7 @@ var render = function() {
           "div",
           {
             staticClass:
-              "border-blue-200 border-4 rounded-xl p-6 overflow-hidden mb-6"
+              " bg-black border-blue-200 border-4 rounded-xl p-6 overflow-hidden mb-6"
           },
           [
             _c("p", [_vm._v("Job " + _vm._s(job))]),
