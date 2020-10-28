@@ -3,9 +3,9 @@
         <div v-for="job in jobs" class="border-blue-200 border-4 rounded-xl p-6 overflow-hidden mb-6">
             <div>
                 <h5 v-html=job.title class="block mt-1 mb-2 text-lg leading-tight font-semibold text-xl mb-2 text-gray-800 hover:underline"></h5>
-                <h4>Description:</h4>
+                <h4 v-html="$t('description')"></h4>
                 <p v-html=job.description class="text-gray-700 text-base mb-1"></p>
-                <h4>Update at:</h4>
+                <h4 v-html="$t('updated_at')"></h4>
                 <p v-html="$options.filters.dateFormat(job.updated_at)" class="text-gray-700 text-base mb-6"></p>
             </div>
         </div>

@@ -30,11 +30,19 @@ Vue.component('example-component', require('./Components/ExampleComponent.vue').
 import moment from 'moment';
 
 Vue.filter('dateFormat', function(date){
-    return moment(date).locale(document.documentElement.lang).format('dddd, Do MMMM YYYY');
+    return moment(date).locale('en').format('dddd, Do MMMM YYYY');
 })
 
-//import VueAxios from 'vue-axios';
-//Vue.use(VueAxios, axios);
+import Vue from 'vue';
+import VueI18n from 'vue-i18n';
+import messages from "./Lang/translations/indexLang.js";
+
+Vue.use(VueI18n);
+const i18n = new VueI18n({
+    locale:'en',
+    fallbackLocal: 'en',
+    messages
+});
 
 import axios from 'axios';
 import { Model } from 'vue-api-query';
@@ -46,14 +54,14 @@ import routes from './routes.js';
 import AppLayout from "./Layouts/AppLayout.vue";
 
 Vue.use(VueRouter);
-
 const router = new VueRouter({
     mode: 'history',
     routes
 });
 
 const app = new Vue({
+    router,
+    i18n,
     el: '#app',
     components: { AppLayout },
-    router
 });
