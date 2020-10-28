@@ -15,6 +15,7 @@
                 <button v-else v-html=link.label v-on:click="fetchJobs(link.label)" disabled=true style="margin: 20px"></button>
             </div>
         </div>
+        <router-link :to="{ name: 'jobs.show'}">Zu Show</router-link>
     </div>
 </template>
 
@@ -36,6 +37,7 @@
             this.current_page = response.current_page;
         },
         mounted() {
+            console.log('PageIndexMonnted');
         },
         methods: {
             async fetchJobs(pageNumber) {
