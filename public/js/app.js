@@ -2374,6 +2374,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2410,7 +2415,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     }))();
   },
   mounted: function mounted() {
-    console.log('PageIndexMonnted');
+    console.log('PageJobIndex Monnted');
   },
   methods: {
     fetchJobs: function fetchJobs(pageNumber) {
@@ -2422,9 +2427,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                if (pageNumber === 'Next &raquo;') {
+                if (pageNumber === 'Next') {
                   pageNumber = _this2.current_page + 1;
-                } else if (pageNumber === '&laquo; Previous') {
+                } else if (pageNumber === 'Previous') {
                   pageNumber = _this2.current_page - 1;
                 }
 
@@ -64714,33 +64719,27 @@ var render = function() {
           },
           [
             _c("div", [
-              _c("h5", {
-                staticClass:
-                  "block mt-1 mb-2 text-lg leading-tight font-semibold text-xl mb-2 text-gray-800 hover:underline",
-                domProps: { innerHTML: _vm._s(job.title) }
-              }),
+              _c(
+                "h5",
+                {
+                  staticClass:
+                    "block mt-1 mb-2 text-lg leading-tight font-semibold text-xl mb-2 text-gray-800 hover:underline"
+                },
+                [_vm._v(_vm._s(job.title))]
+              ),
               _vm._v(" "),
-              _c("h4", {
-                domProps: { innerHTML: _vm._s(_vm.$t("description")) }
-              }),
+              _c("h4", [_vm._v(_vm._s(_vm.$t("description")))]),
               _vm._v(" "),
               _c("p", {
                 staticClass: "text-gray-700 text-base mb-1",
                 domProps: { innerHTML: _vm._s(job.description) }
               }),
               _vm._v(" "),
-              _c("h4", {
-                domProps: { innerHTML: _vm._s(_vm.$t("updated_at")) }
-              }),
+              _c("h4", [_vm._v(_vm._s(_vm.$t("updated_at")))]),
               _vm._v(" "),
-              _c("p", {
-                staticClass: "text-gray-700 text-base mb-6",
-                domProps: {
-                  innerHTML: _vm._s(
-                    _vm.$options.filters.dateFormat(job.updated_at)
-                  )
-                }
-              })
+              _c("p", { staticClass: "text-gray-700 text-base mb-6" }, [
+                _vm._v(_vm._s(_vm._f("dateFormat")(job.updated_at)))
+              ])
             ])
           ]
         )
@@ -64764,16 +64763,19 @@ var render = function() {
                   },
                   [_vm._v("Last Page")]
                 )
-              : _c("button", {
-                  staticStyle: { margin: "20px" },
-                  attrs: { disabled: "true" },
-                  domProps: { innerHTML: _vm._s(link.label) },
-                  on: {
-                    click: function($event) {
-                      return _vm.fetchJobs(link.label)
+              : _c(
+                  "button",
+                  {
+                    staticStyle: { margin: "20px" },
+                    attrs: { disabled: "true" },
+                    on: {
+                      click: function($event) {
+                        return _vm.fetchJobs(link.label)
+                      }
                     }
-                  }
-                })
+                  },
+                  [_vm._v(_vm._s(link.label))]
+                )
           ])
         }),
         0
